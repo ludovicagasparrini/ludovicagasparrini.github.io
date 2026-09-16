@@ -2,7 +2,7 @@
 
 Landing page React in JavaScript, responsive, generata dai contenuti JSON e prerenderizzata in HTML per motori di ricerca e crawler senza JavaScript.
 
-Sito: https://ludovicagasparrini.github.io/ludovica_gasparrini.github.io/
+Sito: https://ludovicagasparrini.github.io/
 
 ## Sviluppo
 
