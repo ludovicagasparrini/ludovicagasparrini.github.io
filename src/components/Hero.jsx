@@ -45,9 +45,7 @@ export default function Hero({ section, base = "./" }) {
           Ascolto, valutazione e interventi personalizzati per accompagnare le
           risorse di ciascuno, in ogni fase della vita.
         </p>
-        <div className="panel-bottom">
-          NEUROPSICOLOGIA <span>01 —</span>
-        </div>
+        <div className="panel-bottom">NEUROPSICOLOGIA</div>
       </aside>
     </section>
   );

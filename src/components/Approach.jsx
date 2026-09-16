@@ -8,11 +8,10 @@ export default function Approach({ section }) {
         <h2>{section.title}</h2>
       </div>
       <div className="steps">
-        {section.items.map((x, i) => (
+        {section.items.map((x) => (
           <article key={x.title}>
             <div className="card-top">
               <Icon name={x.icon} variant="badge" />
-              <span className="step-number">0{i + 1}</span>
             </div>
             <h3>{x.title}</h3>
             <p>{x.description}</p>

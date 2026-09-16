@@ -9,11 +9,10 @@ export default function Services({ section }) {
         <p>{section.description}</p>
       </div>
       <div className="services">
-        {section.items.map((x, i) => (
+        {section.items.map((x) => (
           <article key={x.title}>
             <div className="card-top">
               <Icon name={x.icon} variant="badge" />
-              <span className="number">0{i + 1}</span>
             </div>
             <h3>{x.title}</h3>
             <p>{x.description}</p>
