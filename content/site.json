@@ -10,9 +10,18 @@
     "region": "Marche"
   },
   "navigation": [
-    { "label": "Chi sono", "href": "#chi-sono" },
-    { "label": "Ambiti di intervento", "href": "#servizi" },
-    { "label": "Approccio", "href": "#approccio" }
+    {
+      "label": "Chi sono",
+      "href": "#chi-sono"
+    },
+    {
+      "label": "Ambiti di intervento",
+      "href": "#servizi"
+    },
+    {
+      "label": "Approccio",
+      "href": "#approccio"
+    }
   ],
   "pages": [
     {
@@ -34,6 +43,7 @@
           "description": "Dalla comprensione delle difficoltà alla valorizzazione delle risorse: ambiti di intervento per la persona e per chi le è vicino.",
           "items": [
             {
+              "icon": "assessment",
               "title": "Valutazione neuropsicologica",
               "description": "Comprendere il funzionamento cognitivo e i bisogni della persona per orientare un intervento individualizzato.",
               "points": [
@@ -42,6 +52,7 @@
               ]
             },
             {
+              "icon": "growth",
               "title": "Apprendimenti e neurosviluppo",
               "description": "Interventi psicoeducativi e abilitativi per accompagnare lo sviluppo e sostenere le competenze nell’età evolutiva.",
               "points": [
@@ -50,6 +61,7 @@
               ]
             },
             {
+              "icon": "renew",
               "title": "Riabilitazione e stimolazione cognitiva",
               "description": "Percorsi individuali e di gruppo dedicati alle funzioni cognitive, nell’età adulta e nell’invecchiamento.",
               "points": [
@@ -58,6 +70,7 @@
               ]
             },
             {
+              "icon": "dialogue",
               "title": "Autonomie e comunicazione",
               "description": "Interventi per sostenere la partecipazione quotidiana delle persone con disabilità e bisogni comunicativi complessi.",
               "points": [
@@ -66,6 +79,7 @@
               ]
             },
             {
+              "icon": "care",
               "title": "Supporto a familiari e caregiver",
               "description": "Uno spazio di supporto psicologico e psicoeducativo per chi si prende cura di una persona con fragilità.",
               "points": [
@@ -86,16 +100,19 @@
           ],
           "qualifications": [
             {
+              "icon": "certificate",
               "year": "2025",
               "title": "Master in Neuropsicologia dei Disturbi del Neurosviluppo",
               "detail": "Centro Studi Erickson"
             },
             {
+              "icon": "badge",
               "year": "2023",
               "title": "Iscrizione all’Ordine degli Psicologi delle Marche",
               "detail": "Sezione A · Abilitazione all’esercizio della professione"
             },
             {
+              "icon": "graduation",
               "year": "2021",
               "title": "Laurea magistrale in Psicologia Clinica e Neuropsicologia nel Ciclo di Vita",
               "detail": "Università di Milano-Bicocca · 110/110 e lode"
@@ -108,14 +125,17 @@
           "title": "Un percorso costruito insieme.",
           "items": [
             {
+              "icon": "listen",
               "title": "Comprendere",
               "description": "Ascolto e osservazione per conoscere la persona, il suo contesto e le difficoltà che incontra nella vita quotidiana."
             },
             {
+              "icon": "tune",
               "title": "Personalizzare",
               "description": "Obiettivi e interventi calibrati sulle risorse e sui bisogni individuali, coinvolgendo le figure di riferimento quando necessario."
             },
             {
+              "icon": "journey",
               "title": "Accompagnare",
               "description": "Monitoraggio del percorso e rimodulazione degli interventi, in dialogo con la persona, la famiglia e i professionisti coinvolti."
             }

@@ -571,3 +571,73 @@ h2 {
 .contact-links {
   min-width: 0;
 }
+
+/* Icone */
+.icon {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  line-height: 0;
+}
+.icon svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+.icon-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #e9f0f1;
+  color: #2f6670;
+}
+.icon-badge svg {
+  width: 24px;
+  height: 24px;
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.services article .card-top,
+.steps article .card-top {
+  margin-top: 2px;
+}
+.qualification-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4f6772;
+}
+.qualification-top .icon svg {
+  width: 20px;
+  height: 20px;
+}
+.contact-links a {
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+.contact-links .icon {
+  color: #a9c3cc;
+}
+.contact-links a:hover .icon {
+  color: #fff;
+}
+.contact-place {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.contact-place .icon {
+  color: #a9c3cc;
+  margin-top: 2px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .contact-links .icon,
+  .icon-badge {
+    transition: color 0.2s ease;
+  }
+}

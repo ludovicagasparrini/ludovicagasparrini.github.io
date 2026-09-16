@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "./Icon.jsx";
 export default function About({ section }) {
   return (
     <section className="about" id={section.id}>
@@ -15,7 +16,10 @@ export default function About({ section }) {
           <p className="eyebrow">FORMAZIONE E PROFESSIONE</p>
           {section.qualifications.map((x) => (
             <div className="qualification" key={x.title}>
-              <span>{x.year}</span>
+              <div className="qualification-top">
+                <Icon name={x.icon} />
+                <span>{x.year}</span>
+              </div>
               <h3>{x.title}</h3>
               <p>{x.detail}</p>
             </div>

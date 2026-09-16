@@ -32,6 +32,8 @@ Esempio di nuova sezione:
 
 Per una nuova pagina, aggiungere un oggetto a `pages`, per esempio con `path: "/informazioni/"`, titolo, descrizione e sezioni. Il build genera automaticamente `/informazioni/index.html`, canonical, metadati e sitemap; ogni URL è quindi apribile direttamente su GitHub Pages. Nel menu usare `href: "informazioni/"`. I path devono iniziare e finire con `/` e contenere solo lettere minuscole, numeri e trattini.
 
+Ogni ambito di intervento, passo dell'approccio e voce di formazione ha una chiave `icon` che seleziona un'icona in `src/components/Icon.jsx`. Nomi disponibili: `assessment`, `growth`, `renew`, `dialogue`, `care`, `listen`, `tune`, `journey`, `certificate`, `badge`, `graduation`, `mail`, `phone`, `pin`. Le icone dei contatti sono fisse nel componente. Omettere `icon` non mostra nulla; un nome inesistente interrompe il build, così l'errore emerge in CI e non in produzione. Per aggiungerne una, inserire i tracciati SVG su griglia 24×24 nel registro di `Icon.jsx`: il colore e lo spessore sono ereditati, quindi bastano `path`/`circle` senza attributi di stile.
+
 I componenti sono separati in `src/components/`. Il registro in `src/App.jsx` associa `type` ai componenti React. Per un nuovo tipo di layout, creare un componente, importarlo e aggiungerlo al registro. I contenuti JSON sono interpretati dallo stesso renderer React sia nel browser sia durante il prerender; gli aggiornamenti richiedono un nuovo build, eseguito automaticamente ad ogni push su `main`. Non è necessario un server applicativo.
 
 ## Pubblicazione

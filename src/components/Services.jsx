@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "./Icon.jsx";
 export default function Services({ section }) {
   return (
     <section className="section wrap" id={section.id}>
@@ -10,7 +11,10 @@ export default function Services({ section }) {
       <div className="services">
         {section.items.map((x, i) => (
           <article key={x.title}>
-            <span className="number">0{i + 1}</span>
+            <div className="card-top">
+              <Icon name={x.icon} variant="badge" />
+              <span className="number">0{i + 1}</span>
+            </div>
             <h3>{x.title}</h3>
             <p>{x.description}</p>
             <ul>
