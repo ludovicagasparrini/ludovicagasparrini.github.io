@@ -1,23 +1,133 @@
 {
   "siteUrl": "https://lorenzo-stacchio.github.io/website_ludovica_gasparrini/",
-  "person": {"name":"Ludovica Gasparrini","jobTitle":"Psicologa","email":"ludovica.gasparrini97@gmail.com","telephone":"+393881930604","displayPhone":"+39 388 193 0604","city":"Macerata","region":"Marche"},
-  "navigation":[{"label":"Chi sono","href":"#chi-sono"},{"label":"Ambiti di intervento","href":"#servizi"},{"label":"Approccio","href":"#approccio"}],
-  "pages":[{
-    "path":"/",
-    "title":"Ludovica Gasparrini | Psicologa a Macerata",
-    "description":"Ludovica Gasparrini, psicologa a Macerata: valutazione neuropsicologica, neurosviluppo, riabilitazione cognitiva e supporto a familiari e caregiver.",
-    "sections":[
-      {"type":"hero","id":"inizio","title":"Uno spazio per te,","emphasis":"per le tue possibilità.","description":"Sono Ludovica Gasparrini, psicologa a Macerata. Mi occupo di neuropsicologia, apprendimenti e autonomie, con percorsi costruiti intorno alla persona."},
-      {"type":"services","id":"servizi","title":"Prendersi cura, in ogni fase della vita.","description":"Dalla comprensione delle difficoltà alla valorizzazione delle risorse: ambiti di intervento per la persona e per chi le è vicino.","items":[
-        {"title":"Valutazione neuropsicologica","description":"Comprendere il funzionamento cognitivo e i bisogni della persona per orientare un intervento individualizzato.","points":["Valutazione e osservazione funzionale","Screening dei disturbi neurocognitivi"]},
-        {"title":"Apprendimenti e neurosviluppo","description":"Interventi psicoeducativi e abilitativi per accompagnare lo sviluppo e sostenere le competenze nell’età evolutiva.","points":["Potenziamento degli apprendimenti","Supporto nei disturbi del neurosviluppo"]},
-        {"title":"Riabilitazione e stimolazione cognitiva","description":"Percorsi individuali e di gruppo dedicati alle funzioni cognitive, nell’età adulta e nell’invecchiamento.","points":["Abilitazione e riabilitazione cognitiva","Stimolazione cognitiva nelle demenze"]},
-        {"title":"Autonomie e comunicazione","description":"Interventi per sostenere la partecipazione quotidiana delle persone con disabilità e bisogni comunicativi complessi.","points":["Sviluppo delle autonomie personali e relazionali","Consulenza e training sulle tecnologie assistive"]},
-        {"title":"Supporto a familiari e caregiver","description":"Uno spazio di supporto psicologico e psicoeducativo per chi si prende cura di una persona con fragilità.","points":["Supporto ai caregiver di persone con demenza","Strategie condivise con famiglie ed équipe"]}
-      ]},
-      {"type":"about","id":"chi-sono","title":"Prima di tutto,\nla persona.","intro":"Sono una psicologa con formazione in neuropsicologia clinica e nei disturbi del neurosviluppo.","paragraphs":["Il mio lavoro mette al centro la storia, le capacità e i bisogni di ciascuno. Progetto interventi personalizzati per bambini, adulti e anziani, in collaborazione con famiglie, caregiver ed équipe multidisciplinari.","La mia esperienza comprende i laboratori «Io faccio da Solo», interventi domiciliari per persone con disturbi neurocognitivi e percorsi di stimolazione cognitiva per l’invecchiamento attivo."],"qualifications":[{"year":"2025","title":"Master in Neuropsicologia dei Disturbi del Neurosviluppo","detail":"Centro Studi Erickson"},{"year":"2023","title":"Iscrizione all’Ordine degli Psicologi delle Marche","detail":"Sezione A · Abilitazione all’esercizio della professione"},{"year":"2021","title":"Laurea magistrale in Psicologia Clinica e Neuropsicologia nel Ciclo di Vita","detail":"Università di Milano-Bicocca · 110/110 e lode"}]},
-      {"type":"approach","id":"approccio","title":"Un percorso costruito insieme.","items":[{"title":"Comprendere","description":"Ascolto e osservazione per conoscere la persona, il suo contesto e le difficoltà che incontra nella vita quotidiana."},{"title":"Personalizzare","description":"Obiettivi e interventi calibrati sulle risorse e sui bisogni individuali, coinvolgendo le figure di riferimento quando necessario."},{"title":"Accompagnare","description":"Monitoraggio del percorso e rimodulazione degli interventi, in dialogo con la persona, la famiglia e i professionisti coinvolti."}]},
-      {"type":"contact","id":"contatti","title":"Il primo passo è parlarne.","description":"Per conoscere meglio il mio lavoro o chiedere informazioni su un percorso, puoi scrivermi o chiamarmi."}
-    ]
-  }]
+  "person": {
+    "name": "Ludovica Gasparrini",
+    "jobTitle": "Psicologa",
+    "email": "ludovica.gasparrini97@gmail.com",
+    "telephone": "+393881930604",
+    "displayPhone": "+39 388 193 0604",
+    "city": "Macerata",
+    "region": "Marche"
+  },
+  "navigation": [
+    { "label": "Chi sono", "href": "#chi-sono" },
+    { "label": "Ambiti di intervento", "href": "#servizi" },
+    { "label": "Approccio", "href": "#approccio" }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Ludovica Gasparrini | Psicologa a Macerata",
+      "description": "Ludovica Gasparrini, psicologa a Macerata: valutazione neuropsicologica, neurosviluppo, riabilitazione cognitiva e supporto a familiari e caregiver.",
+      "sections": [
+        {
+          "type": "hero",
+          "id": "inizio",
+          "title": "Uno spazio per te,",
+          "emphasis": "per le tue possibilità.",
+          "description": "Sono Ludovica Gasparrini, psicologa a Macerata. Mi occupo di neuropsicologia, apprendimenti e autonomie, con percorsi costruiti intorno alla persona."
+        },
+        {
+          "type": "services",
+          "id": "servizi",
+          "title": "Prendersi cura, in ogni fase della vita.",
+          "description": "Dalla comprensione delle difficoltà alla valorizzazione delle risorse: ambiti di intervento per la persona e per chi le è vicino.",
+          "items": [
+            {
+              "title": "Valutazione neuropsicologica",
+              "description": "Comprendere il funzionamento cognitivo e i bisogni della persona per orientare un intervento individualizzato.",
+              "points": [
+                "Valutazione e osservazione funzionale",
+                "Screening dei disturbi neurocognitivi"
+              ]
+            },
+            {
+              "title": "Apprendimenti e neurosviluppo",
+              "description": "Interventi psicoeducativi e abilitativi per accompagnare lo sviluppo e sostenere le competenze nell’età evolutiva.",
+              "points": [
+                "Potenziamento degli apprendimenti",
+                "Supporto nei disturbi del neurosviluppo"
+              ]
+            },
+            {
+              "title": "Riabilitazione e stimolazione cognitiva",
+              "description": "Percorsi individuali e di gruppo dedicati alle funzioni cognitive, nell’età adulta e nell’invecchiamento.",
+              "points": [
+                "Abilitazione e riabilitazione cognitiva",
+                "Stimolazione cognitiva nelle demenze"
+              ]
+            },
+            {
+              "title": "Autonomie e comunicazione",
+              "description": "Interventi per sostenere la partecipazione quotidiana delle persone con disabilità e bisogni comunicativi complessi.",
+              "points": [
+                "Sviluppo delle autonomie personali e relazionali",
+                "Consulenza e training sulle tecnologie assistive"
+              ]
+            },
+            {
+              "title": "Supporto a familiari e caregiver",
+              "description": "Uno spazio di supporto psicologico e psicoeducativo per chi si prende cura di una persona con fragilità.",
+              "points": [
+                "Supporto ai caregiver di persone con demenza",
+                "Strategie condivise con famiglie ed équipe"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "about",
+          "id": "chi-sono",
+          "title": "Prima di tutto,\nla persona.",
+          "intro": "Sono una psicologa con formazione in neuropsicologia clinica e nei disturbi del neurosviluppo.",
+          "paragraphs": [
+            "Il mio lavoro mette al centro la storia, le capacità e i bisogni di ciascuno. Progetto interventi personalizzati per bambini, adulti e anziani, in collaborazione con famiglie, caregiver ed équipe multidisciplinari.",
+            "La mia esperienza comprende i laboratori «Io faccio da Solo», interventi domiciliari per persone con disturbi neurocognitivi e percorsi di stimolazione cognitiva per l’invecchiamento attivo."
+          ],
+          "qualifications": [
+            {
+              "year": "2025",
+              "title": "Master in Neuropsicologia dei Disturbi del Neurosviluppo",
+              "detail": "Centro Studi Erickson"
+            },
+            {
+              "year": "2023",
+              "title": "Iscrizione all’Ordine degli Psicologi delle Marche",
+              "detail": "Sezione A · Abilitazione all’esercizio della professione"
+            },
+            {
+              "year": "2021",
+              "title": "Laurea magistrale in Psicologia Clinica e Neuropsicologia nel Ciclo di Vita",
+              "detail": "Università di Milano-Bicocca · 110/110 e lode"
+            }
+          ]
+        },
+        {
+          "type": "approach",
+          "id": "approccio",
+          "title": "Un percorso costruito insieme.",
+          "items": [
+            {
+              "title": "Comprendere",
+              "description": "Ascolto e osservazione per conoscere la persona, il suo contesto e le difficoltà che incontra nella vita quotidiana."
+            },
+            {
+              "title": "Personalizzare",
+              "description": "Obiettivi e interventi calibrati sulle risorse e sui bisogni individuali, coinvolgendo le figure di riferimento quando necessario."
+            },
+            {
+              "title": "Accompagnare",
+              "description": "Monitoraggio del percorso e rimodulazione degli interventi, in dialogo con la persona, la famiglia e i professionisti coinvolti."
+            }
+          ]
+        },
+        {
+          "type": "contact",
+          "id": "contatti",
+          "title": "Il primo passo è parlarne.",
+          "description": "Per conoscere meglio il mio lavoro o chiedere informazioni su un percorso, puoi scrivermi o chiamarmi."
+        }
+      ]
+    }
+  ]
 }

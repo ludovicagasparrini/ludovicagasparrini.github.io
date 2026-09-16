@@ -22,12 +22,17 @@ Modificare `content/site.json`. `person` contiene i contatti; `navigation` le vo
 Esempio di nuova sezione:
 
 ```json
-{"type":"text","id":"informazioni","title":"Informazioni utili","paragraphs":["Testo della sezione."]}
+{
+  "type": "text",
+  "id": "informazioni",
+  "title": "Informazioni utili",
+  "paragraphs": ["Testo della sezione."]
+}
 ```
 
 Per una nuova pagina, aggiungere un oggetto a `pages`, per esempio con `path: "/informazioni/"`, titolo, descrizione e sezioni. Il build genera automaticamente `/informazioni/index.html`, canonical, metadati e sitemap; ogni URL è quindi apribile direttamente su GitHub Pages. Nel menu usare `href: "informazioni/"`. I path devono iniziare e finire con `/` e contenere solo lettere minuscole, numeri e trattini.
 
-Il registro in `src/App.jsx` associa `type` ai componenti React. Per un nuovo tipo di layout, creare un componente, importarlo e aggiungerlo al registro. I contenuti JSON sono interpretati dallo stesso renderer React sia nel browser sia durante il prerender; gli aggiornamenti richiedono un nuovo build, eseguito automaticamente ad ogni push su `main`. Non è necessario un server applicativo.
+I componenti sono separati in `src/components/`. Il registro in `src/App.jsx` associa `type` ai componenti React. Per un nuovo tipo di layout, creare un componente, importarlo e aggiungerlo al registro. I contenuti JSON sono interpretati dallo stesso renderer React sia nel browser sia durante il prerender; gli aggiornamenti richiedono un nuovo build, eseguito automaticamente ad ogni push su `main`. Non è necessario un server applicativo.
 
 ## Pubblicazione
 

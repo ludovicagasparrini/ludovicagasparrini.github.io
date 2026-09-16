@@ -1,11 +1,85 @@
-import React,{useState} from 'react';
-import data from '../content/site.json';
-const base=import.meta.env.BASE_URL;
-function Hero({section}){return <section className="hero wrap" id={section.id}><div className="hero-copy"><p className="eyebrow">PSICOLOGA · MACERATA</p><h1>{section.title}<br/><em>{section.emphasis}</em></h1><p className="lead">{section.description}</p><a className="button" href="#contatti">Parliamone insieme <span aria-hidden="true">↗</span></a><p className="small">Bambini, adulti, anziani e chi se ne prende cura.</p></div><aside className="intro-panel"><div className="portrait-row"><img src={`${base}portrait.png`} alt="Ludovica Gasparrini" width="112" height="112"/><span>Dott.ssa<br/><strong>Ludovica<br/>Gasparrini</strong></span></div><div className="panel-rule"/><p className="panel-title">Ogni persona ha<br/>il proprio percorso.</p><p>Ascolto, valutazione e interventi personalizzati per accompagnare le risorse di ciascuno, in ogni fase della vita.</p><div className="panel-bottom">NEUROPSICOLOGIA <span>01 —</span></div></aside></section>}
-function Services({section}){return <section className="section wrap" id={section.id}><div className="section-heading"><p className="eyebrow">COME POSSO AIUTARTI</p><h2>{section.title}</h2><p>{section.description}</p></div><div className="services">{section.items.map((x,i)=><article key={x.title}><span className="number">0{i+1}</span><h3>{x.title}</h3><p>{x.description}</p><ul>{x.points.map(p=><li key={p}>{p}</li>)}</ul></article>)}</div></section>}
-function About({section}){return <section className="about" id={section.id}><div className="wrap about-grid"><div><p className="eyebrow">CHI SONO</p><h2>{section.title}</h2><p className="lead">{section.intro}</p>{section.paragraphs.map(p=><p key={p}>{p}</p>)}</div><div className="qualifications"><p className="eyebrow">FORMAZIONE E PROFESSIONE</p>{section.qualifications.map(x=><div className="qualification" key={x.title}><span>{x.year}</span><h3>{x.title}</h3><p>{x.detail}</p></div>)}</div></div></section>}
-function Approach({section}){return <section className="section wrap" id={section.id}><div className="section-heading"><p className="eyebrow">IL MIO APPROCCIO</p><h2>{section.title}</h2></div><div className="steps">{section.items.map((x,i)=><article key={x.title}><span className="step-number">0{i+1}</span><h3>{x.title}</h3><p>{x.description}</p></article>)}</div></section>}
-function Contact({section}){return <section className="contact" id={section.id}><div className="wrap contact-grid"><div><p className="eyebrow">UN PRIMO CONTATTO</p><h2>{section.title}</h2><p>{section.description}</p></div><div className="contact-links"><a href={`mailto:${data.person.email}`}><span>SCRIVIMI</span><strong>{data.person.email}</strong><span aria-hidden="true">↗</span></a><a href={`tel:${data.person.telephone}`}><span>CHIAMAMI</span><strong>{data.person.displayPhone}</strong><span aria-hidden="true">↗</span></a><p>{data.person.city}, {data.person.region}<br/><small>Contattami per informazioni sulle modalità e sulla disponibilità degli incontri.</small></p></div></div></section>}
-function TextSection({section}){return <section className="section wrap prose" id={section.id}><h2>{section.title}</h2>{section.paragraphs.map(p=><p key={p}>{p}</p>)}</section>}
-const registry={hero:Hero,services:Services,about:About,approach:Approach,contact:Contact,text:TextSection};
-export default function App({path='/'}){const page=data.pages.find(x=>x.path===path)||data.pages[0];const [open,setOpen]=useState(false);return <><a className="skip" href="#contenuto">Vai al contenuto</a><header className="header wrap"><a className="brand" href={base} aria-label="Ludovica Gasparrini, home"><span className="monogram">lg.</span><span>Ludovica Gasparrini<small>PSICOLOGA</small></span></a><button className="menu-toggle" aria-expanded={open} aria-controls="navigation" onClick={()=>setOpen(!open)}>Menu <span aria-hidden="true">{open?'−':'+'}</span></button><nav id="navigation" aria-label="Navigazione principale" className={open?'open':''}>{data.navigation.map(x=><a key={x.href} href={`${base}${x.href}`} onClick={()=>setOpen(false)}>{x.label}</a>)}<a className="nav-contact" href={`${base}#contatti`} onClick={()=>setOpen(false)}>Contattami <span aria-hidden="true">↗</span></a></nav></header><main id="contenuto">{page.sections.filter(x=>x.enabled!==false).map(section=>{const Component=registry[section.type];if(!Component)throw new Error(`Tipo di sezione non supportato: ${section.type}`);return <Component key={section.id} section={section}/>})}</main><footer className="wrap footer"><div><strong>Dott.ssa Ludovica Gasparrini</strong><p>Psicologa · Ordine degli Psicologi delle Marche, Sezione A</p></div><span>Macerata, Italia</span></footer></>}
+import TextSection from "./components/TextSection.jsx";
+import Contact from "./components/Contact.jsx";
+import Approach from "./components/Approach.jsx";
+import About from "./components/About.jsx";
+import Services from "./components/Services.jsx";
+import Hero from "./components/Hero.jsx";
+import React, { useState } from "react";
+import data from "../content/site.json";
+const base = import.meta.env.BASE_URL;
+const registry = {
+  hero: Hero,
+  services: Services,
+  about: About,
+  approach: Approach,
+  contact: Contact,
+  text: TextSection,
+};
+export default function App({ path = "/" }) {
+  const page = data.pages.find((x) => x.path === path) || data.pages[0];
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <a className="skip" href="#contenuto">
+        Vai al contenuto
+      </a>
+      <header className="header wrap">
+        <a className="brand" href={base} aria-label="Ludovica Gasparrini, home">
+          <span className="monogram">lg.</span>
+          <span>
+            Ludovica Gasparrini<small>PSICOLOGA</small>
+          </span>
+        </a>
+        <button
+          className="menu-toggle"
+          aria-expanded={open}
+          aria-controls="navigation"
+          onClick={() => setOpen(!open)}
+        >
+          Menu <span aria-hidden="true">{open ? "−" : "+"}</span>
+        </button>
+        <nav
+          id="navigation"
+          aria-label="Navigazione principale"
+          className={open ? "open" : ""}
+        >
+          {data.navigation.map((x) => (
+            <a
+              key={x.href}
+              href={`${base}${x.href}`}
+              onClick={() => setOpen(false)}
+            >
+              {x.label}
+            </a>
+          ))}
+          <a
+            className="nav-contact"
+            href={`${base}#contatti`}
+            onClick={() => setOpen(false)}
+          >
+            Contattami <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </header>
+      <main id="contenuto">
+        {page.sections
+          .filter((x) => x.enabled !== false)
+          .map((section) => {
+            const Component = registry[section.type];
+            if (!Component)
+              throw new Error(
+                `Tipo di sezione non supportato: ${section.type}`,
+              );
+            return <Component key={section.id} section={section} />;
+          })}
+      </main>
+      <footer className="wrap footer">
+        <div>
+          <strong>Dott.ssa Ludovica Gasparrini</strong>
+          <p>Psicologa · Ordine degli Psicologi delle Marche, Sezione A</p>
+        </div>
+        <span>Macerata, Italia</span>
+      </footer>
+    </>
+  );
+}
