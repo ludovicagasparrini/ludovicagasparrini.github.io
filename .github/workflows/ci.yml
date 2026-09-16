@@ -1,0 +1,27 @@
+name: Build check
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          SITE_URL: https://example.invalid/sottocartella/
+      # Verifica la build su un URL diverso da quello di produzione: se un
+      # riferimento è ancora legato a un percorso assoluto, qui fallisce.
+      - run: npm run check

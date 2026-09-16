@@ -1,6 +1,5 @@
 import React from "react";
-const base = import.meta.env.BASE_URL;
-export default function Hero({ section }) {
+export default function Hero({ section, base = "./" }) {
   return (
     <section className="hero wrap" id={section.id}>
       <div className="hero-copy">

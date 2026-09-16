@@ -2,7 +2,7 @@
 
 Landing page React in JavaScript, responsive, generata dai contenuti JSON e prerenderizzata in HTML per motori di ricerca e crawler senza JavaScript.
 
-Sito: https://lorenzo-stacchio.github.io/website_ludovica_gasparrini/
+Sito: https://ludovicagasparrini.github.io/ludovica_gasparrini.github.io/
 
 ## Sviluppo
 
@@ -36,7 +36,11 @@ I componenti sono separati in `src/components/`. Il registro in `src/App.jsx` as
 
 ## Pubblicazione
 
-Il workflow `.github/workflows/pages.yml` compila e pubblica su GitHub Pages ad ogni push su `main`. La sorgente in Settings → Pages deve essere **GitHub Actions**. Il workflow calcola dominio e sottocartella reali tramite `configure-pages`, passando `BASE_PATH` e `SITE_URL` al build. Per un dominio personalizzato, configurarlo su GitHub Pages e aggiornare `siteUrl` nel JSON.
+Il workflow `.github/workflows/pages.yml` compila e pubblica su GitHub Pages ad ogni push su `main` (o manualmente da Actions → Publish website → Run workflow). La sorgente in Settings → Pages deve essere **GitHub Actions**; il workflow prova ad attivarla da solo.
+
+Gli asset usano percorsi relativi, quindi il sito funziona a qualsiasi indirizzo: sito utente, pagina di progetto, sottocartella o dominio personalizzato. Dopo una rinomina o un trasferimento del repository è comunque necessario **rilanciare il workflow**, perché canonical, Open Graph e sitemap usano l'URL reale (`SITE_URL`, calcolato da `configure-pages`). Per un dominio personalizzato, configurarlo su GitHub Pages e aggiornare `siteUrl` nel JSON, che è il valore usato nei build locali.
+
+`npm run check` (eseguito in CI dopo ogni build) verifica che ogni riferimento delle pagine generate esista in `dist/` e non usi percorsi assoluti: è il controllo che intercetta i link rotti prima della pubblicazione. Il workflow `.github/workflows/ci.yml` esegue build e verifica su ogni pull request e su ogni branch diverso da `main`.
 
 ## SEO e ricerca AI
 

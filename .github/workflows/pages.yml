@@ -1,15 +1,19 @@
 name: Publish website
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,11 +28,16 @@ jobs:
           cache: npm
       - uses: actions/configure-pages@v5
         id: pages
+        with:
+          # Attiva GitHub Pages con sorgente "GitHub Actions" se non lo è già.
+          enablement: true
       - run: npm ci
+      # I percorsi degli asset sono relativi, quindi il sito è valido a
+      # qualsiasi URL. SITE_URL serve solo a canonical, Open Graph e sitemap.
       - run: npm run build
         env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
           SITE_URL: ${{ steps.pages.outputs.base_url }}/
+      - run: npm run check
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

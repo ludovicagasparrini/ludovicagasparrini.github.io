@@ -6,7 +6,7 @@ import Services from "./components/Services.jsx";
 import Hero from "./components/Hero.jsx";
 import React, { useState } from "react";
 import data from "../content/site.json";
-const base = import.meta.env.BASE_URL;
+import { baseFor, linkTo } from "./base.js";
 const registry = {
   hero: Hero,
   services: Services,
@@ -17,6 +17,7 @@ const registry = {
 };
 export default function App({ path = "/" }) {
   const page = data.pages.find((x) => x.path === path) || data.pages[0];
+  const base = baseFor(page.path);
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -46,7 +47,7 @@ export default function App({ path = "/" }) {
           {data.navigation.map((x) => (
             <a
               key={x.href}
-              href={`${base}${x.href}`}
+              href={linkTo(base, x.href)}
               onClick={() => setOpen(false)}
             >
               {x.label}
@@ -54,7 +55,7 @@ export default function App({ path = "/" }) {
           ))}
           <a
             className="nav-contact"
-            href={`${base}#contatti`}
+            href={linkTo(base, "#contatti")}
             onClick={() => setOpen(false)}
           >
             Contattami <span aria-hidden="true">↗</span>
@@ -70,7 +71,9 @@ export default function App({ path = "/" }) {
               throw new Error(
                 `Tipo di sezione non supportato: ${section.type}`,
               );
-            return <Component key={section.id} section={section} />;
+            return (
+              <Component key={section.id} section={section} base={base} />
+            );
           })}
       </main>
       <footer className="wrap footer">

@@ -21,6 +21,12 @@ for (const page of data.pages) {
     ids.add(section.id);
   }
   const url = new URL(page.path.slice(1), root).href;
+  // Vite emette riferimenti relativi ("./assets/..."): per le pagine annidate
+  // vanno riscritti con il numero di "../" corrispondente alla profondità.
+  const depth = page.path.split("/").filter(Boolean).length;
+  const pageTemplate = depth
+    ? template.replaceAll('="./', `="${"../".repeat(depth)}`)
+    : template;
   const person = {
     "@type": "Person",
     "@id": `${root}#person`,
@@ -81,7 +87,7 @@ for (const page of data.pages) {
     ],
   };
   const seo = `<title>${escape(page.title)}</title><meta name="description" content="${escape(page.description)}"/><link rel="canonical" href="${escape(url)}"/><meta name="robots" content="index,follow,max-image-preview:large"/><meta property="og:type" content="website"/><meta property="og:locale" content="it_IT"/><meta property="og:title" content="${escape(page.title)}"/><meta property="og:description" content="${escape(page.description)}"/><meta property="og:url" content="${escape(url)}"/><script type="application/ld+json">${json(schema)}</script>`;
-  const html = template
+  const html = pageTemplate
     .replace("<!--seo-->", seo)
     .replace("<!--app-->", render(page.path))
     .replace(
