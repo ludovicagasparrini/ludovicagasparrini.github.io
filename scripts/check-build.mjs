@@ -21,6 +21,12 @@ const exists = async (p) => access(p).then(() => true, () => false);
 
 for (const file of await pages(dist)) {
   const html = await readFile(file, "utf8");
+  // Google richiede questo file esatto, senza il markup delle pagine del sito.
+  if (file === join(dist, "google382c4d2ab2282585.html")) {
+    if (html.trim() !== "google-site-verification: google382c4d2ab2282585.html")
+      errors.push(`${file}: contenuto di verifica Google non valido`);
+    continue;
+  }
   const refs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)].map((m) => m[1]);
   for (const ref of refs) {
     if (/^(?:[a-z]+:|\/\/|#)/i.test(ref)) continue;
